@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Architect / Expert Fullstack Developer & OSINT Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        /* Встроенный шрифт Montserrat */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #000000;
+            --secondary: #333333;
+            --light: #666666;
+            --background: #FFFFFF;
+            --border: #EEEEEE;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --accent: #111111;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--background);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Навигация */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px;
+            width: 30px;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        /* Основные секции */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 0.5rem auto;
+        }
+        
+        /* Шапка */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            position: relative;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .photo-container {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: 0 10px 30px var(--shadow);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        #profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-container:hover #profile-photo {
+            transform: scale(1.05);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        .scroll-indicator span {
+            display: block;
+            width: 24px;
+            height: 40px;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .scroll-indicator span::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            animation: scroll 2s infinite;
+        }
+        
+        @keyframes scroll {
+            0% { opacity: 1; top: 6px; }
+            100% { opacity: 0; top: 20px; }
+        }
+        
+        /* Обо мне */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+        
+        .about-text:nth-child(2) { animation-delay: 0.2s; }
+        .about-text:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .competencies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .competency {
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .competency:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .competency h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        /* Навыки */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.8rem;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+        }
+        
+        .skill-level {
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: #F0F0F0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+        
+        .skill-item:hover .skill-progress {
+            background-color: var(--accent);
+        }
+        
+        .skill-info {
+            font-size: 0.9rem;
+            color: var(--light);
+            margin-top: 0.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .skill-item:hover .skill-info {
+            max-height: 100px;
+        }
+        
+        /* Проекты */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background-color: #F5F5F5;
+            color: var(--secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-details {
+            color: var(--light);
+            font-size: 0.95rem;
+        }
+        
+        /* Опыт работы */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--border);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 2px solid var(--primary);
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            background-color: white;
+            border: 2px solid var(--primary);
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            z-index: 1;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary);
+            border: 3px solid white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -8px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -8px;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-company {
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Образование */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .education-item {
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .education-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .education-meta {
+            color: var(--light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Контакты */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #F5F5F5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .contact-item div {
+            text-align: center;
+        }
+        
+        .contact-item div div:first-child {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-item div div:last-child {
+            color: var(--secondary);
+        }
+        
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 23px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 20px var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .photo-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .contact-item {
+                padding: 1.5rem 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .photo-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">JK</a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#experience">Опыт</a></li>
+                <li><a href="#education">Образование</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Шапка -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="photo-container">
+                <img id="profile-photo" src="photo.jpg" alt="Фото Жээнбека Куватова">
+            </div>
+            <h1>Жээнбек Куватов</h1>
+            <h2>Architect / Expert Fullstack Developer & OSINT Специалист</h2>
+            <p>Эксперт по кибербезопасности и Fullstack разработке с фокусом на OSINT-исследованиях. Опыт сотрудничества с МВД и СБНОН в раскрытии тяжких преступлений. Создание масштабируемых защищенных решений для государственных структур.</p>
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Обо мне -->
+    <section id="about">
+        <h2 class="section-title">Обо мне</h2>
+        <div class="about-content">
+            <p class="about-text">Architect / Expert Fullstack Developer с 3-летним опытом разработки веб-приложений и систем безопасности. Специализируюсь на создании высоконагруженных приложений с акцентом на безопасность данных и отказоустойчивость архитектуры.</p>
+            <p class="about-text">Сотрудничал с МВД и СБНОН Кыргызской Республики, оказывая техническую поддержку в раскрытии тяжких преступлений с использованием OSINT (Open Source Intelligence) методологий. Разрабатывал специализированные инструменты для анализа цифровых следов, сбора информации из открытых источников и визуализации связей между подозреваемыми.</p>
+            <p class="about-text">Создавал системы для анализа социальных сетей, отслеживания транзакций в криптовалюте и автоматизации сбора доказательной базы. Мои разработки помогли ускорить расследование более 15 сложных дел, включая кибермошенничество, торговлю наркотиками и организованную преступность.</p>
+            <p class="about-text">Подход к работе основан на глубоком анализе требований, проектировании масштабируемых архитектур и написании чистого, поддерживаемого кода. Постоянно изучаю новые технологии и методологии для повышения эффективности и безопасности разрабатываемых решений.</p>
+            
+            <div class="competencies">
+                <div class="competency">
+                    <h3>Ключевые компетенции</h3>
+                    <p>Fullstack разработка, проектирование архитектуры, безопасность веб-приложений, криптография, OSINT-исследования, анализ цифровых следов, оптимизация производительности, DevOps практики.</p>
+                </div>
+                <div class="competency">
+                    <h3>Специализация</h3>
+                    <p>Системы безопасности, аналитические панели, системы мониторинга в реальном времени, защита данных, искусственный интеллект для кибербезопасности, инструменты для правоохранительных органов.</p>
+                </div>
+                <div class="competency">
+                    <h3>Государственное сотрудничество</h3>
+                    <p>Опыт работы с МВД, СБНОН. Разработка специализированного ПО для расследований. Консультации по цифровой криминалистике и кибербезопасности.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Навыки -->
+    <section id="skills">
+        <h2 class="section-title">Навыки</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML5 / CSS3</span>
+                        <span class="skill-level">Эксперт</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                    <div class="skill-info">Семантическая верстка, адаптивный дизайн, CSS Grid, Flexbox, анимации</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript / TypeScript</span>
+                        <span class="skill-level">Продвинутый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                    <div class="skill-info">ES6+, ООП, асинхронное программирование, React, Vue, Angular</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">React & Vue</span>
+                        <span class="skill-level">Продвинутый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                    <div class="skill-info">Хуки, состояние, роутинг, оптимизация производительности</div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Node.js</span>
+                        <span class="skill-level">Продвинутый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                    <div class="skill-info">Express, NestJS, REST API, WebSocket, аутентификация, авторизация</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">Продвинутый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                    <div class="skill-info">Django, Flask, асинхронное программирование, анализ данных</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Базы данных</span>
+                        <span class="skill-level">Продвинутый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 82%"></div>
+                    </div>
+                    <div class="skill-info">PostgreSQL, MongoDB, Redis, проектирование схем, оптимизация запросов</div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Безопасность & OSINT</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Безопасность веб-приложений</span>
+                        <span class="skill-level">Эксперт</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%"></div>
+                    </div>
+                    <div class="skill-info">OWASP Top 10, криптография, защита от инъекций, XSS, CSRF, безопасные API</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">OSINT исследования</span>
+                        <span class="skill-level">Эксперт</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                    <div class="skill-info">Анализ соцсетей, геолокация, метаданные, dark web мониторинг, автоматизация сбора данных</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Криптография</span>
+                        <span class="skill-level">Продвинутый</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                    <div class="skill-info">Асимметричное шифрование, цифровые подписи, SSL/TLS, хеширование</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проекты -->
+    <section id="projects">
+        <h2 class="section-title">Проекты</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>SecHackink</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Нейронные сети</span>
+                    </div>
+                    <p class="project-details">Система кибербезопасности с элементами искусственного интеллекта для обнаружения аномалий и предсказания атак. Самообучающаяся система, интегрированная с SOC для автоматического ответа на инциденты.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>GPS-трекеры</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Картография</span>
+                    </div>
+                    <p class="project-details">Система мониторинга и безопасности с онлайн отслеживанием и прослушиванием. Реальное время отслеживания, геозоны, история маршрутов, аудиомониторинг. Шифрование данных и масштабируемая архитектура.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Система управления доступом</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">RBAC</span>
+                        <span class="tech-tag">Биометрия</span>
+                    </div>
+                    <p class="project-details">Многофакторная система аутентификации и авторизации с поддержкой ролевой модели доступа, биометрической верификацией и аудитом действий пользователей.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Аналитическая панель</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">WebSocket</span>
+                    </div>
+                    <p class="project-details">Панель мониторинга в реальном времени для анализа угроз кибербезопасности с интерактивными визуализациями, оповещениями и отчетами.</p>
+                </div>
+            </div>
+
+            <!-- Новые проекты -->
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>OSINT Platform для МВД</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scrapy</span>
+                        <span class="tech-tag">Elasticsearch</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">OSINT</span>
+                    </div>
+                    <p class="project-details">Платформа для автоматизации сбора и анализа открытых данных. Интеграция с соцсетями, форумами, dark web. Использовалась для расследования 12 уголовных дел.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>CrimeNet Analyzer</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">NetworkX</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Graph Database</span>
+                    </div>
+                    <p class="project-details">Система анализа связей преступных группировок. Визуализация сетей контактов, финансовых потоков, выявление ключевых узлов. Помогла раскрыть 3 дела об организованной преступности.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Crypto Transaction Tracker</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Blockchain</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Web3.js</span>
+                        <span class="tech-tag">Bitcoin</span>
+                    </div>
+                    <p class="project-details">Инструмент отслеживания криптовалютных транзакций для СБНОН. Анализ цепочек переводов, идентификация кошельков, генерация отчетов для следственных действий.</p>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Digital Evidence Suite</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Forensics</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Encryption</span>
+                    </div>
+                    <p class="project-details">Комплексное решение для сбора и хранения цифровых доказательств. Хеширование файлов, цепочка доверия, безопасное хранение, интеграция с системами МВД.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Опыт работы -->
+    <section id="experience">
+        <h2 class="section-title">Опыт работы</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - настоящее время</div>
+                    <div class="timeline-company">TechSecure Solutions</div>
+                    <h3>Architect / Expert Fullstack Developer</h3>
+                    <p>Разработка систем безопасности для государственных и коммерческих заказчиков. Проектирование архитектуры, реализация механизмов шифрования, интеграция с внешними API.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <div class="timeline-company">WebGuard Systems</div>
+                    <h3>Frontend Developer / Backend Developer</h3>
+                    <p>Разработка интерфейсов и серверной логики для систем мониторинга. Создание REST API, оптимизация производительности, внедрение практик безопасности.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2021 - 2022</div>
+                    <div class="timeline-company">Консультант по кибербезопасности</div>
+                    <h3>OSINT Специалист / Консультант</h3>
+                    <p>Сотрудничество с МВД и СБНОН КР. Разработка специализированных инструментов для расследований. Консультации по цифровой криминалистике. Участие в раскрытии 15+ уголовных дел с использованием OSINT-методологий.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Образование -->
+    <section id="education">
+        <h2 class="section-title">Образование и сертификации</h2>
+        <div class="education-grid">
+            <div class="education-item">
+                <h3>Среднее общее образование</h3>
+                <div class="education-meta">Гимназия №1, Бишкек, 2011-2022</div>
+                <p>Углубленное изучение математики, информатики и физики. Победитель городских олимпиад по программированию и кибербезопасности.</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>Курсы Fullstack разработки</h3>
+                <div class="education-meta">Online Academy, 2021-2022</div>
+                <p>Интенсивные курсы по веб-разработке, включающие HTML/CSS, JavaScript, React, Node.js, базы данных и DevOps практики.</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>Сертификации</h3>
+                <div class="education-meta">AWS Certified Solutions Architect - Associate, 2024</div>
+                <p>Архитектура облачных решений на AWS, проектирование масштабируемых систем.</p>
+                
+                <div class="education-meta" style="margin-top: 1rem;">Certified Ethical Hacker (CEH), 2023</div>
+                <p>Этичный взлом, тестирование на проникновение, методы защиты.</p>
+                
+                <div class="education-meta" style="margin-top: 1rem;">OSINT Professional Certification, 2023</div>
+                <p>Методологии разведки на основе открытых источников, инструменты и техники.</p>
+                
+                <div class="education-meta" style="margin-top: 1rem;">Google Cybersecurity Certificate, 2022</div>
+                <p>Сертификация по основам кибербезопасности, сетевой безопасности и защите данных.</p>
+                
+                <div class="education-meta" style="margin-top: 1rem;">FreeCodeCamp Fullstack Developer, 2021</div>
+                <p>Сертификация по полному циклу веб-разработки, включая фронтенд и бэкенд технологии.</p>
+                
+                <div class="education-meta" style="margin-top: 1rem;">CompTIA Security+, 2022</div>
+                <p>Фундаментальные знания по кибербезопасности, сетевая безопасность, криптография.</p>
+                
+                <div class="education-meta" style="margin-top: 1rem;">SANS SEC487: Open-Source Intelligence, 2023</div>
+                <p>Продвинутые техники OSINT, автоматизация сбора данных, анализ метаданных.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Свяжитесь со мной</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <div>Email</div>
+                            <div>asoceoc777@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div>Телефон</div>
+                            <div>+996 600 006 827</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>© 2024 Резюме JK. Все права защищены.</p>
+        <p style="margin-top: 0.5rem;">Копирование сайта, а равно использование его материалов в любых целях без письменного разрешения правообладателя, запрещено и влечёт установленную законодательством уголовную ответственность.</p>
+    </footer>
+
+    <script>
+        // Анимация навигации
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // Переключение мобильного меню
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+                sendTelegramMessage('📱 *Меню переключено*');
+            });
+            
+            // Закрытие меню при клике на ссылку
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    sendTelegramMessage(`📌 *Клик по навигации:* _${item.textContent}_`);
+                });
+            });
+            
+            // Подсветка активного раздела при прокрутке
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${current}`) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Анимация прогресс-баров навыков
+            function animateSkillBars() {
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 300);
+                });
+            }
+            
+            // Анимация элементов временной шкалы
+            function animateTimeline() {
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (itemTop < windowHeight * 0.85) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Инициализация анимаций при загрузке
+            window.addEventListener('load', () => {
+                animateSkillBars();
+                animateTimeline();
+                
+                // ОТПРАВЛЯЕМ СООБЩЕНИЕ ПРИ КАЖДОЙ ЗАГРУЗКЕ СТРАНИЦЫ
+                sendTelegramMessage('🎯 *ЗАГРУЗКА СТРАНИЦЫ*', 'page_load');
+                
+                // Отслеживаем каждое взаимодействие с сайтом
+                setupActivityTracking();
+            });
+            
+            // Анимация при прокрутке
+            window.addEventListener('scroll', () => {
+                animateTimeline();
+            });
+            
+            // Плавная прокрутка к разделам
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        sendTelegramMessage(`🔗 *Прокрутка к разделу:* _${targetId.replace('#', '')}_`);
+                    }
+                });
+            });
+            
+            // Анимация появления элементов при прокрутке
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Наблюдаем за элементами с анимацией
+            document.querySelectorAll('.about-text, .competency, .project-card, .education-item, .contact-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+            
+            // ==================== УЛУЧШЕННАЯ ЛОГИКА ОТСЛЕЖИВАНИЯ ====================
+            
+            // Глобальные переменные для управления трекингом
+            const Tracking = {
+                isInitialized: false,
+                queue: [],
+                isSending: false,
+                messageCount: 0,
+                maxMessagesPerSession: 100,
+                sessionStartTime: Date.now(),
+                userIdentifier: null,
+                visitHistory: [],
+                actionHistory: [],
+                
+                // Инициализация трекинга
+                init() {
+                    if (this.isInitialized) return;
+                    
+                    this.userIdentifier = this.generateUserIdentifier();
+                    this.loadVisitHistory();
+                    this.setupSessionTracking();
+                    this.setupQueueProcessor();
+                    
+                    this.isInitialized = true;
+                    console.log('Трекинг инициализирован для пользователя:', this.userIdentifier);
+                },
+                
+                // Генерация уникального идентификатора пользователя
+                generateUserIdentifier() {
+                    let identifier = localStorage.getItem('user_identifier');
+                    
+                    if (!identifier) {
+                        // Создаем новый идентификатор на основе случайных данных и времени
+                        const randomPart = Math.random().toString(36).substring(2, 15);
+                        const timePart = Date.now().toString(36);
+                        identifier = `user_${randomPart}_${timePart}`;
+                        localStorage.setItem('user_identifier', identifier);
+                        
+                        // Отмечаем как нового пользователя
+                        localStorage.setItem('is_new_user', 'true');
+                    }
+                    
+                    return identifier;
+                },
+                
+                // Проверка, является ли пользователь новым
+                isNewUser() {
+                    return localStorage.getItem('is_new_user') === 'true';
+                },
+                
+                // Загрузка истории посещений
+                loadVisitHistory() {
+                    const savedHistory = localStorage.getItem('visit_history');
+                    this.visitHistory = savedHistory ? JSON.parse(savedHistory) : [];
+                },
+                
+                // Сохранение истории посещений
+                saveVisitHistory() {
+                    localStorage.setItem('visit_history', JSON.stringify(this.visitHistory));
+                },
+                
+                // Настройка отслеживания сессии
+                setupSessionTracking() {
+                    // Проверяем, начата ли уже сессия
+                    const sessionId = sessionStorage.getItem('session_id');
+                    if (!sessionId) {
+                        // Создаем новую сессию
+                        const newSessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+                        sessionStorage.setItem('session_id', newSessionId);
+                        sessionStorage.setItem('session_start', Date.now().toString());
+                    }
+                    
+                    // Увеличиваем счетчик посещений
+                    this.incrementVisitCount();
+                },
+                
+                // Увеличение счетчика посещений
+                incrementVisitCount() {
+                    let totalVisits = parseInt(localStorage.getItem('total_visits')) || 0;
+                    totalVisits++;
+                    localStorage.setItem('total_visits', totalVisits.toString());
+                    
+                    // Сохраняем информацию о визите
+                    const visitInfo = {
+                        timestamp: new Date().toISOString(),
+                        sessionId: sessionStorage.getItem('session_id'),
+                        userAgent: navigator.userAgent,
+                        url: window.location.href,
+                        referrer: document.referrer
+                    };
+                    
+                    this.visitHistory.push(visitInfo);
+                    this.saveVisitHistory();
+                    
+                    return totalVisits;
+                },
+                
+                // Получение статистики посещений
+                getVisitStats() {
+                    const totalVisits = parseInt(localStorage.getItem('total_visits')) || 0;
+                    const firstVisitDate = localStorage.getItem('first_visit_date');
+                    
+                    if (!firstVisitDate) {
+                        localStorage.setItem('first_visit_date', new Date().toISOString());
+                    }
+                    
+                    return {
+                        totalVisits,
+                        isNewUser: this.isNewUser(),
+                        firstVisitDate: firstVisitDate || new Date().toISOString(),
+                        lastVisitDate: this.visitHistory.length > 0 ? 
+                            this.visitHistory[this.visitHistory.length - 1].timestamp : 
+                            new Date().toISOString(),
+                        sessionCount: this.visitHistory.length
+                    };
+                },
+                
+                // Добавление действия в историю
+                addAction(action, data = {}) {
+                    const actionInfo = {
+                        id: `action_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+                        timestamp: new Date().toISOString(),
+                        action: action,
+                        data: data,
+                        url: window.location.href,
+                        sessionId: sessionStorage.getItem('session_id')
+                    };
+                    
+                    this.actionHistory.push(actionInfo);
+                    
+                    // Ограничиваем размер истории действий
+                    if (this.actionHistory.length > 100) {
+                        this.actionHistory = this.actionHistory.slice(-100);
+                    }
+                    
+                    return actionInfo;
+                },
+                
+                // Добавление сообщения в очередь
+                addToQueue(action, data = {}, priority = 'normal') {
+                    const queueItem = {
+                        id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+                        timestamp: Date.now(),
+                        action: action,
+                        data: data,
+                        priority: priority,
+                        attempts: 0,
+                        maxAttempts: 3
+                    };
+                    
+                    // Добавляем в очередь в зависимости от приоритета
+                    if (priority === 'high') {
+                        this.queue.unshift(queueItem); // Добавляем в начало
+                    } else {
+                        this.queue.push(queueItem); // Добавляем в конец
+                    }
+                    
+                    console.log(`Добавлено в очередь: ${action} (приоритет: ${priority})`);
+                    this.processQueue();
+                    
+                    return queueItem.id;
+                },
+                
+                // Обработка очереди
+                setupQueueProcessor() {
+                    // Автоматическая обработка очереди каждые 5 секунд
+                    setInterval(() => {
+                        this.processQueue();
+                    }, 5000);
+                },
+                
+                // Отправка сообщений из очереди
+                async processQueue() {
+                    if (this.isSending || this.queue.length === 0) return;
+                    
+                    // Проверяем лимит сообщений
+                    if (this.messageCount >= this.maxMessagesPerSession) {
+                        console.warn('Достигнут лимит сообщений за сессию');
+                        return;
+                    }
+                    
+                    this.isSending = true;
+                    
+                    try {
+                        // Берем первое сообщение из очереди
+                        const queueItem = this.queue.shift();
+                        
+                        if (queueItem) {
+                            // Увеличиваем счетчик попыток
+                            queueItem.attempts++;
+                            
+                            try {
+                                // Отправляем сообщение
+                                const visitorData = await this.getVisitorData();
+                                const success = await this.sendTelegramMessage(visitorData, queueItem.action, 'action');
+                                
+                                if (success) {
+                                    this.messageCount++;
+                                    console.log(`Сообщение отправлено: ${queueItem.action}`);
+                                } else {
+                                    // Если не удалось, возвращаем в очередь
+                                    if (queueItem.attempts < queueItem.maxAttempts) {
+                                        this.queue.unshift(queueItem);
+                                        console.log(`Повторная попытка отправки: ${queueItem.action}`);
+                                    }
+                                }
+                            } catch (error) {
+                                console.error('Ошибка при отправке:', error);
+                                if (queueItem.attempts < queueItem.maxAttempts) {
+                                    this.queue.unshift(queueItem);
+                                }
+                            }
+                        }
+                    } finally {
+                        this.isSending = false;
+                        
+                        // Если в очереди еще есть сообщения, продолжаем обработку
+                        if (this.queue.length > 0) {
+                            setTimeout(() => this.processQueue(), 1000);
+                        }
+                    }
+                },
+                
+                // Получение данных о посетителе
+                async getVisitorData() {
+                    try {
+                        // Получаем IP адрес через внешний сервис
+                        const ipResponse = await fetch('https://api.ipify.org?format=json');
+                        const ipData = await ipResponse.json();
+                        
+                        // Получаем геолокацию (если возможно)
+                        let locationData = {};
+                        try {
+                            const locationResponse = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
+                            locationData = await locationResponse.json();
+                        } catch (error) {
+                            console.log('Не удалось получить геолокацию:', error);
+                        }
+                        
+                        // Статистика посещений
+                        const visitStats = this.getVisitStats();
+                        
+                        // Собираем информацию об устройстве
+                        const deviceInfo = {
+                            ip: ipData.ip,
+                            userIdentifier: this.userIdentifier,
+                            userAgent: navigator.userAgent,
+                            language: navigator.language,
+                            platform: navigator.platform,
+                            screenResolution: `${screen.width}x${screen.height}`,
+                            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                            cookiesEnabled: navigator.cookieEnabled,
+                            browserName: navigator.appName,
+                            browserVersion: navigator.appVersion,
+                            vendor: navigator.vendor,
+                            online: navigator.onLine,
+                            deviceMemory: navigator.deviceMemory || 'unknown',
+                            hardwareConcurrency: navigator.hardwareConcurrency,
+                            maxTouchPoints: navigator.maxTouchPoints,
+                            currentUrl: window.location.href,
+                            referrer: document.referrer || 'direct',
+                            timestamp: new Date().toISOString(),
+                            pageLoadTime: performance.timing.loadEventEnd - performance.timing.navigationStart,
+                            connectionType: navigator.connection ? {
+                                effectiveType: navigator.connection.effectiveType,
+                                downlink: navigator.connection.downlink,
+                                rtt: navigator.connection.rtt
+                            } : 'unknown',
+                            location: locationData,
+                            visitStats: visitStats,
+                            sessionId: sessionStorage.getItem('session_id'),
+                            sessionDuration: Date.now() - this.sessionStartTime
+                        };
+                        
+                        return deviceInfo;
+                    } catch (error) {
+                        console.error('Ошибка получения данных о посетителе:', error);
+                        return {
+                            ip: 'unknown',
+                            userIdentifier: this.userIdentifier,
+                            userAgent: navigator.userAgent,
+                            error: error.message,
+                            timestamp: new Date().toISOString(),
+                            visitStats: this.getVisitStats()
+                        };
+                    }
+                },
+                
+                // Отправка сообщения в Telegram
+                async sendTelegramMessage(visitorData, action, eventType = 'action') {
+                    // ЗАМЕНИТЕ НА ВАШИ ДАННЫЕ
+                    const BOT_TOKEN = '8517069677:AAFu7jTObSpUThWyYIRGuPVI3Utcjox5I8M';
+                    const CHAT_ID = '8327554468';
+                    
+                    // Определяем тип пользователя
+                    const userType = visitorData.visitStats.isNewUser ? 
+                        '🎉 *НОВЫЙ ПОЛЬЗОВАТЕЛЬ*' : 
+                        `👤 *ПОСТОЯННЫЙ ПОСЕТИТЕЛЬ*\n📊 *Всего посещений:* ${visitorData.visitStats.totalVisits}`;
+                    
+                    // Форматируем сообщение в зависимости от типа события
+                    let message = '';
+                    
+                    if (eventType === 'page_load') {
+                        message = this.formatPageLoadMessage(visitorData, userType);
+                    } else {
+                        message = this.formatActionMessage(visitorData, action, userType);
+                    }
+                    
+                    try {
+                        // Отправляем сообщение в Telegram
+                        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                chat_id: CHAT_ID,
+                                text: message,
+                                parse_mode: 'Markdown',
+                                disable_web_page_preview: true
+                            })
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (result.ok) {
+                            // Если пользователь был новым, отмечаем его как постоянного
+                            if (visitorData.visitStats.isNewUser) {
+                                localStorage.removeItem('is_new_user');
+                            }
+                            
+                            return true;
+                        } else {
+                            console.error('Ошибка Telegram API:', result);
+                            return false;
+                        }
+                    } catch (error) {
+                        console.error('Ошибка отправки в Telegram:', error);
+                        return false;
+                    }
+                },
+                
+                // Форматирование сообщения о загрузке страницы
+                formatPageLoadMessage(visitorData, userType) {
+                    return `
+✨ *═══════════════════════*
+🎯 *НОВЫЙ ВИЗИТ НА САЙТЕ РЕЗЮМЕ*
+✨ *═══════════════════════*
+
+${userType}
+
+📅 *Дата и время:* _${new Date(visitorData.timestamp).toLocaleString('ru-RU')}_
+🌐 *IP адрес:* \`${visitorData.ip}\`
+📍 *Местоположение:* ${visitorData.location.city ? `_${visitorData.location.city}, ${visitorData.location.country_name}_` : '_Неизвестно_'}
+🖥 *Браузер:* _${visitorData.browserName} ${visitorData.browserVersion}_
+💻 *Платформа:* _${visitorData.platform}_
+📱 *Разрешение экрана:* _${visitorData.screenResolution}_
+🌍 *Временная зона:* _${visitorData.timezone}_
+🔗 *Источник перехода:* _${visitorData.referrer}_
+⚡ *Время загрузки:* _${visitorData.pageLoadTime} ms_
+
+📈 *Статистика посещений:*
+   • Первый визит: _${new Date(visitorData.visitStats.firstVisitDate).toLocaleString('ru-RU')}_
+   • Всего визитов: _${visitorData.visitStats.totalVisits}_
+   • Сессия: _${visitorData.sessionId.substring(0, 10)}..._
+
+📊 *Характеристики устройства:*
+   • Память: _${visitorData.deviceMemory} GB_
+   • Процессоров: _${visitorData.hardwareConcurrency}_
+   • Соединение: _${visitorData.connectionType.effectiveType || 'unknown'}_
+   • Скорость: _${visitorData.connectionType.downlink || 'unknown'} Mbps_
+
+✨ *═══════════════════════*
+                    `;
+                },
+                
+                // Форматирование сообщения о действии
+                formatActionMessage(visitorData, action, userType) {
+                    const sessionDuration = Math.floor((Date.now() - this.sessionStartTime) / 1000);
+                    const minutes = Math.floor(sessionDuration / 60);
+                    const seconds = sessionDuration % 60;
+                    
+                    return `
+⚡ *═══════════════════════*
+🎯 *ДЕЙСТВИЕ ПОЛЬЗОВАТЕЛЯ*
+⚡ *═══════════════════════*
+
+${userType}
+
+🎯 *Действие:* _${action}_
+📅 *Время:* _${new Date(visitorData.timestamp).toLocaleString('ru-RU')}_
+🌐 *IP адрес:* \`${visitorData.ip}\`
+⏱ *Время сессии:* _${minutes} мин ${seconds} сек_
+🖥 *Браузер:* _${visitorData.browserName}_
+
+📊 *Счетчик действий:* _${this.actionHistory.length}_
+🔗 *URL:* ${visitorData.currentUrl}
+
+✨ *═══════════════════════*
+                    `;
+                }
+            };
+            
+            // Инициализация трекинга
+            Tracking.init();
+            
+            // Упрощенная функция для отправки сообщений
+            async function sendTelegramMessage(action, eventType = 'action') {
+                // Добавляем действие в историю
+                const actionInfo = Tracking.addAction(action);
+                
+                // Определяем приоритет
+                let priority = 'normal';
+                if (eventType === 'page_load') {
+                    priority = 'high';
+                } else if (action.includes('контакт') || action.includes('проект')) {
+                    priority = 'high';
+                }
+                
+                // Добавляем в очередь
+                Tracking.addToQueue(action, actionInfo, priority);
+            }
+            
+            // Настройка отслеживания ВСЕХ действий с улучшенной логикой
+            function setupActivityTracking() {
+                // Дебаунс для частых событий
+                const createDebouncedTracker = (callback, delay = 2000) => {
+                    let timeout;
+                    return (...args) => {
+                        clearTimeout(timeout);
+                        timeout = setTimeout(() => callback(...args), delay);
+                    };
+                };
+                
+                // 1. Отслеживание ВСЕХ кликов на сайте с группировкой
+                let clickBuffer = [];
+                let clickTimer;
+                
+                document.addEventListener('click', function(e) {
+                    const target = e.target;
+                    let action = 'Клик';
+                    
+                    // Определяем тип клика
+                    if (target.tagName === 'A') {
+                        action = `*Клик по ссылке:* _${target.textContent.substring(0, 50) || target.href}_`;
+                    } else if (target.tagName === 'BUTTON') {
+                        action = `*Клик по кнопке:* _${target.textContent.substring(0, 50) || target.className}_`;
+                    } else if (target.closest('.project-card')) {
+                        const projectTitle = target.closest('.project-card').querySelector('h3')?.textContent;
+                        action = `*Клик по проекту:* _${projectTitle || 'Проект'}_`;
+                    } else if (target.closest('.contact-item')) {
+                        const contactType = target.closest('.contact-item').querySelector('div > div:first-child')?.textContent;
+                        action = `*Клик по контакту:* _${contactType || 'Контакт'}_`;
+                    } else {
+                        action = `*Клик по элементу:* _${target.tagName} ${target.className || ''}_`.trim();
+                    }
+                    
+                    // Добавляем в буфер
+                    clickBuffer.push(action);
+                    
+                    // Группируем клики (отправляем раз в 2 секунды)
+                    clearTimeout(clickTimer);
+                    clickTimer = setTimeout(() => {
+                        if (clickBuffer.length > 0) {
+                            const uniqueClicks = [...new Set(clickBuffer)];
+                            const summary = uniqueClicks.length > 1 ? 
+                                `*${uniqueClicks.length} кликов:* ${uniqueClicks.join(', ')}` :
+                                clickBuffer[0];
+                            
+                            sendTelegramMessage(summary);
+                            clickBuffer = [];
+                        }
+                    }, 2000);
+                });
+                
+                // 2. Отслеживание прокрутки с интеллектуальным определением
+                let lastScrollPosition = window.scrollY;
+                let scrollDirection = '';
+                let scrollSections = [];
+                
+                const debouncedScrollTracker = createDebouncedTracker(() => {
+                    const currentPosition = window.scrollY;
+                    const diff = currentPosition - lastScrollPosition;
+                    
+                    if (Math.abs(diff) > 100) { // Прокрутили больше 100px
+                        scrollDirection = diff > 0 ? 'вниз' : 'вверх';
+                        sendTelegramMessage(`📜 *Прокрутка страницы* (${scrollDirection})`);
+                        lastScrollPosition = currentPosition;
+                    }
+                }, 3000);
+                
+                window.addEventListener('scroll', debouncedScrollTracker);
+                
+                // 3. Отслеживание наведения на важные элементы с задержкой
+                document.querySelectorAll('.project-card, .contact-item, .competency, .education-item').forEach(el => {
+                    let hoverStartTime;
+                    let hoverTimeout;
+                    
+                    el.addEventListener('mouseenter', function() {
+                        hoverStartTime = Date.now();
+                        hoverTimeout = setTimeout(() => {
+                            const elementType = this.classList.contains('project-card') ? 'Проект' :
+                                              this.classList.contains('contact-item') ? 'Контакт' :
+                                              this.classList.contains('competency') ? 'Компетенция' :
+                                              this.classList.contains('education-item') ? 'Образование' : 'Элемент';
+                            const title = this.querySelector('h3')?.textContent || '';
+                            const hoverDuration = Date.now() - hoverStartTime;
+                            
+                            sendTelegramMessage(`🖱 *Длительное наведение на ${elementType}:* _${title}_ (${Math.floor(hoverDuration/1000)} сек)`);
+                        }, 3000); // После 3 секунд наведения
+                    });
+                    
+                    el.addEventListener('mouseleave', function() {
+                        clearTimeout(hoverTimeout);
+                        const hoverDuration = Date.now() - hoverStartTime;
+                        
+                        if (hoverDuration > 1000 && hoverDuration < 3000) {
+                            const elementType = this.classList.contains('project-card') ? 'Проект' :
+                                              this.classList.contains('contact-item') ? 'Контакт' :
+                                              this.classList.contains('competency') ? 'Компетенция' :
+                                              this.classList.contains('education-item') ? 'Образование' : 'Элемент';
+                            const title = this.querySelector('h3')?.textContent || '';
+                            
+                            sendTelegramMessage(`🖱 *Краткое наведение на ${elementType}:* _${title}_`);
+                        }
+                    });
+                });
+                
+                // 4. Отслеживание изменения размера окна
+                const debouncedResizeTracker = createDebouncedTracker(() => {
+                    sendTelegramMessage(`📱 *Изменение размера окна:* _${window.innerWidth}x${window.innerHeight}_`);
+                }, 2000);
+                
+                window.addEventListener('resize', debouncedResizeTracker);
+                
+                // 5. Отслеживание копирования текста
+                document.addEventListener('copy', function() {
+                    const selection = window.getSelection().toString();
+                    if (selection.length > 20) { // Копирование только значительного текста
+                        const preview = selection.substring(0, 100);
+                        sendTelegramMessage(`📋 *Копирование текста (${selection.length} символов):* _${preview}..._`);
+                    }
+                });
+                
+                // 6. Отслеживание печати страницы
+                window.addEventListener('beforeprint', function() {
+                    sendTelegramMessage('🖨 *Попытка печати страницы*');
+                });
+                
+                // 7. Отслеживание горячих клавиш (только важных)
+                const importantKeys = {
+                    'c': 'Ctrl+C (Копирование)',
+                    'v': 'Ctrl+V (Вставка)',
+                    'p': 'Ctrl+P (Печать)',
+                    's': 'Ctrl+S (Сохранение)',
+                    'a': 'Ctrl+A (Выделить все)'
+                };
+                
+                document.addEventListener('keydown', function(e) {
+                    if ((e.ctrlKey || e.metaKey) && importantKeys[e.key.toLowerCase()]) {
+                        sendTelegramMessage(`⌨ *${importantKeys[e.key.toLowerCase()]}*`);
+                    }
+                    
+                    // F5 или Ctrl+R для обновления
+                    if (e.key === 'F5' || (e.ctrlKey && e.key === 'r')) {
+                        sendTelegramMessage('🔄 *Обновление страницы (F5/Ctrl+R)*');
+                    }
+                });
+                
+                // 8. Отслеживание просмотра секций с улучшенной логикой
+                let sectionsViewed = new Set();
+                let sectionViewTimes = {};
+                
+                function checkSections() {
+                    document.querySelectorAll('section').forEach(section => {
+                        const rect = section.getBoundingClientRect();
+                        const sectionId = section.id;
+                        const sectionName = getSectionName(sectionId);
+                        
+                        if (rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2) {
+                            // Секция в поле зрения
+                            if (!sectionsViewed.has(sectionId)) {
+                                // Первый просмотр секции
+                                sectionsViewed.add(sectionId);
+                                sectionViewTimes[sectionId] = Date.now();
+                                sendTelegramMessage(`📖 *Начал просмотр раздела:* _${sectionName}_`);
+                            }
+                        } else if (sectionsViewed.has(sectionId) && !sectionViewTimes[sectionId + '_reported']) {
+                            // Секция была просмотрена и теперь ушла из виду
+                            const viewDuration = Date.now() - sectionViewTimes[sectionId];
+                            if (viewDuration > 5000) { // Просматривали более 5 секунд
+                                sendTelegramMessage(`📖 *Завершил просмотр раздела:* _${sectionName}_ (${Math.floor(viewDuration/1000)} сек)`);
+                                sectionViewTimes[sectionId + '_reported'] = true;
+                            }
+                        }
+                    });
+                }
+                
+                function getSectionName(id) {
+                    const names = {
+                        'home': 'Главная',
+                        'about': 'Обо мне',
+                        'skills': 'Навыки',
+                        'projects': 'Проекты',
+                        'experience': 'Опыт работы',
+                        'education': 'Образование',
+                        'contact': 'Контакты'
+                    };
+                    return names[id] || id;
+                }
+                
+                // Проверяем секции при прокрутке (с дебаунсом)
+                const debouncedSectionChecker = createDebouncedTracker(checkSections, 1000);
+                window.addEventListener('scroll', debouncedSectionChecker);
+                
+                // Первоначальная проверка
+                setTimeout(checkSections, 2000);
+                
+                // 9. Отслеживание времени активности
+                let lastActivityTime = Date.now();
+                const activityChecker = setInterval(() => {
+                    const inactiveTime = Date.now() - lastActivityTime;
+                    if (inactiveTime > 300000) { // 5 минут неактивности
+                        sendTelegramMessage('⏸ *Пользователь неактивен более 5 минут*');
+                        lastActivityTime = Date.now();
+                    }
+                }, 60000); // Проверка каждую минуту
+                
+                // Обновление времени активности при взаимодействии
+                document.addEventListener('mousemove', () => lastActivityTime = Date.now());
+                document.addEventListener('keydown', () => lastActivityTime = Date.now());
+                document.addEventListener('click', () => lastActivityTime = Date.now());
+            }
+            
+            // Отслеживание видимости страницы
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'hidden') {
+                    sendTelegramMessage('👋 *Пользователь покинул страницу*');
+                } else {
+                    sendTelegramMessage('👀 *Пользователь вернулся на страницу*');
+                }
+            });
+            
+            // Отслеживание закрытия страницы
+            window.addEventListener('beforeunload', function() {
+                // Используем sendBeacon для надежной отправки при закрытии
+                navigator.sendBeacon = navigator.sendBeacon || function(url, data) {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', url, false);
+                    xhr.send(data);
+                    return true;
+                };
+                
+                const message = `🚪 *Закрытие страницы*\nСессия длилась: ${Math.floor((Date.now() - Tracking.sessionStartTime) / 1000)} сек`;
+                
+                try {
+                    navigator.sendBeacon(
+                        `https://api.telegram.org/bot8517069677:AAFu7jTObSpUThWyYIRGuPVI3Utcjox5I8M/sendMessage`,
+                        new URLSearchParams({
+                            chat_id: '8327554468',
+                            text: message,
+                            parse_mode: 'Markdown'
+                        })
+                    );
+                } catch (e) {
+                    // Fallback через изображение
+                    const img = new Image();
+                    img.src = `https://api.telegram.org/bot8517069677:AAFu7jTObSpUThWyYIRGuPVI3Utcjox5I8M/sendMessage?chat_id=8327554468&text=${encodeURIComponent(message)}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
